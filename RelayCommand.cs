@@ -86,6 +86,7 @@ namespace SimpleMVVM
 
         readonly Func<Boolean> _canExecute;
         readonly Action _execute;
+        readonly Action<String> _stringParam;
 
         #endregion
 
@@ -111,6 +112,15 @@ namespace SimpleMVVM
             if (execute == null)
                 throw new ArgumentNullException("execute");
             _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        public RelayCommand(Action<String> execute, Func<Boolean> canExecute, String parameter)
+        {
+
+            if (execute == null)
+                throw new ArgumentNullException("execute");
+            _stringParam = execute;
             _canExecute = canExecute;
         }
 

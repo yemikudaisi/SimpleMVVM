@@ -23,13 +23,13 @@ namespace SimpleMVVM
             }
         }
 
-        protected void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpresssion)
+        protected void NotifyOfPropertyChange<T>(Expression<Func<T>> propertyExpresssion)
         {
             var propertyName = PropertySupport.ExtractPropertyName(propertyExpresssion);
-            this.RaisePropertyChanged(propertyName);
+            this.NotifyOfPropertyChange(propertyName);
         }
 
-        protected void RaisePropertyChanged(String propertyName)
+        protected void NotifyOfPropertyChange(String propertyName)
         {
             VerifyPropertyName(propertyName);
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));

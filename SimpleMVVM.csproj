@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimpleMVVM</RootNamespace>
     <AssemblyName>SimpleMVVM</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -41,17 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventAggregator.cs" />
+    <Compile Include="IEventAggregator.cs" />
+    <Compile Include="IMessage.cs" />
     <Compile Include="Ioc\IContainer.cs" />
     <Compile Include="Ioc\IocContainer.cs" />
     <Compile Include="Ioc\LifeCycle.cs" />
     <Compile Include="Ioc\RegisteredObject.cs" />
     <Compile Include="Ioc\TypeNotRegisteredException.cs" />
+    <Compile Include="ISubscription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyChangeNotifier.cs" />
     <Compile Include="PropertySupport.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="ScreenCollection.cs" />
+    <Compile Include="Subscription.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>

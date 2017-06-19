@@ -8,28 +8,43 @@ namespace SimpleMVVM
 {
     public class Screen : ViewModel
     {
-        private string displayName;
+        private string _displayName;
+        private bool _closeVisible = false;
 
-    public Screen(string tabName)
-    {
-        DisplayName = tabName;
-    }
-
-    public string DisplayName
-    {
-        get
+        public Screen(string tabName)
         {
-            return displayName;
+            DisplayName = tabName;
         }
 
-        set
+        public string DisplayName
         {
-            if (displayName != value)
+            get
             {
-                displayName = value;
-                RaisePropertyChanged("DisplayName");
+                return _displayName;
+            }
+
+            set
+            {
+                if (_displayName != value)
+                {
+                    _displayName = value;
+                    NotifyOfPropertyChange(()=>DisplayName);
+                }
             }
         }
-    }
+
+        public bool CloseVisible
+        {
+            get
+            {
+                return _closeVisible;
+            }
+
+            set
+            {
+                _closeVisible = value;
+                NotifyOfPropertyChange(()=>CloseVisible);
+            }
+        }
     }
 }

@@ -29,8 +29,12 @@ namespace SimpleMVVM
 
             set
             {
+                if (activeScreen != null)
+                    activeScreen.CloseVisible = false;
+                if (value != null)
+                    value.CloseVisible = true;
                 activeScreen = value;
-                RaisePropertyChanged("ActiveScreen");
+                NotifyOfPropertyChange("ActiveScreen");
             }
         }
     }
